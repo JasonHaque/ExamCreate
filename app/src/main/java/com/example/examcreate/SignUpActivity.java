@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.internal.Objects;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -53,6 +55,11 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void signup(String email,String password){
-        //todo: sign up method
+        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Toast.makeText(SignUpActivity.this,"Success", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
