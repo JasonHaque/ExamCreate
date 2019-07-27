@@ -2,11 +2,16 @@ package com.example.examcreate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
@@ -34,13 +39,30 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //code for login
+                String email=emailText.getText().toString();
+                String password = passwordText.getText().toString();
+                if(email.isEmpty() || password.isEmpty()){
+                    Toast.makeText(LoginActivity.this,"Fill up Email And Password Properly", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                login(email,password);
+
             }
         });
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //code to navigate to sign Up page
+                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+            }
+        });
+    }
+
+    private void login(String email,String password){
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Toast.makeText(LoginActivity.this,"Success", Toast.LENGTH_LONG).show();
+                //TO DO: profile code
             }
         });
     }
