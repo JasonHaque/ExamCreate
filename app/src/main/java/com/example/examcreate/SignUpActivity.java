@@ -3,6 +3,7 @@ package com.example.examcreate;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText email,password,confirmPassword;
     private Button signUpButton;
     private FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton=findViewById(R.id.sign_in_button);
         confirmPassword=findViewById(R.id.confirm_password_text);
         firebaseAuth=FirebaseAuth.getInstance();
+        progressDialog=new ProgressDialog(this);
     }
     private void bindListeners(){
         signUpButton.setOnClickListener(new View.OnClickListener() {
@@ -58,10 +61,13 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void signup(String email,String password){
+        progressDialog.setTitle("Signing You In");
+        progressDialog.show();
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(SignUpActivity.this,"Success", Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
                 startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {

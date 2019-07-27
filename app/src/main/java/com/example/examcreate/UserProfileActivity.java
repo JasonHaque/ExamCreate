@@ -2,6 +2,7 @@ package com.example.examcreate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private TextView profiletext;
     private FirebaseAuth firebaseAuth;
     private Button logOut;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,7 @@ public class UserProfileActivity extends AppCompatActivity {
         profiletext=findViewById(R.id.profile_view);
         logOut=findViewById(R.id.log_out_button);
         firebaseAuth=FirebaseAuth.getInstance();
+        progressDialog=new ProgressDialog(this);
     }
     private void bindListeners(){
         logOut.setOnClickListener(new View.OnClickListener() {

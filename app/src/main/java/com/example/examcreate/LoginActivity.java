@@ -2,6 +2,7 @@ package com.example.examcreate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailText,passwordText;
     private Button loginButton,signupButton;
     private FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton=findViewById(R.id.log_in_button);
         firebaseAuth=FirebaseAuth.getInstance();
         signupButton=findViewById(R.id.sign_up_button);
+        progressDialog=new ProgressDialog(this);
     }
 
     private void bindButtonListeners(){
@@ -58,10 +61,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login(String email,String password){
+        progressDialog.setTitle("Logging you in");
+        progressDialog.show();
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(LoginActivity.this,"Success", Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
                 startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
             }
         });
