@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         bindWidgetCallers();
         bindButtonListeners();
-
+        checkUserStatus();
     }
 
     private void bindWidgetCallers(){
@@ -65,5 +65,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
             }
         });
+    }
+    private void checkUserStatus(){
+        if(firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
+        }
     }
 }
