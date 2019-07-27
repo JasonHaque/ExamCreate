@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(LoginActivity.this,"Success", Toast.LENGTH_LONG).show();
-                //TO DO: profile code
+                startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
             }
         });
     }

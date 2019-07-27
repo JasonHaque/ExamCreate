@@ -1,7 +1,9 @@
 package com.example.examcreate;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.internal.Objects;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -59,6 +62,12 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(SignUpActivity.this,"Success", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(SignUpActivity.this,"Failed", Toast.LENGTH_LONG).show();
             }
         });
     }
