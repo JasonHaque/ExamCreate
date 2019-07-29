@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="#85adad"
     tools:context=".LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:textColor="#ffffff"
+        android:text="ExamCreate"
         android:layout_gravity="center"
         android:layout_marginBottom="32dp"
         android:textSize="48sp"/>
@@ -20,6 +22,7 @@
         android:id="@+id/login_email_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:layout_marginBottom="16dp"/>
@@ -27,6 +30,7 @@
         android:id="@+id/login_password_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_marginBottom="16dp"/>
@@ -44,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
+        android:textColor="#ffffff"
         android:text="New Here? Click the button below to sign up"/>
 
     <Button
