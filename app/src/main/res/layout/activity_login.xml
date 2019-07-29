@@ -38,10 +38,13 @@
         android:layout_marginBottom="16dp"/>
     <Button
         android:id="@+id/log_in_button"
-        android:layout_width="wrap_content"
+        android:layout_width="112dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Log In"
+        android:padding="12dp"
+        android:background="#008080"
+        android:textColor="#ffffff"
         android:textSize="22sp"
         android:layout_marginBottom="16dp"/>
 
@@ -59,6 +62,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:background="#008080"
         android:text="Sign Up"
         android:textSize="22sp"
         android:layout_marginBottom="16dp"/>
