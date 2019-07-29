@@ -10,13 +10,15 @@
     tools:context=".LoginActivity">
 
     <TextView
+        android:layout_marginTop="22dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
         android:text="ExamCreate"
+        android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginBottom="32dp"
-        android:textSize="48sp"/>
+        android:textSize="58sp"/>
 
     <EditText
         android:id="@+id/login_email_text"
@@ -47,8 +49,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="15dp"
         android:textColor="#ffffff"
+        android:textSize="16sp"
         android:text="New Here? Click the button below to sign up"/>
 
     <Button
