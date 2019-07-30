@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="#85adad"
     tools:context=".UserProfileActivity">
 
     <TextView
@@ -17,6 +18,9 @@
         android:id="@+id/log_out_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:background="#008080"
         android:textSize="22sp"
         android:text="Log Out"/>
 </LinearLayout>
