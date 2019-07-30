@@ -6,20 +6,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="#85adad"
     tools:context=".SignUpActivity">
 
     <TextView
+        android:layout_marginTop="22dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:textColor="#ffffff"
+        android:text="ExamCreate"
+        android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginBottom="32dp"
-        android:textSize="48sp"/>
+        android:textSize="58sp"/>
 
     <EditText
         android:id="@+id/sign_up_email_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:layout_marginBottom="16dp"/>
@@ -27,6 +32,7 @@
         android:id="@+id/sign_up_password_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_marginBottom="16dp"/>
@@ -34,6 +40,7 @@
         android:id="@+id/confirm_password_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="Confrim Password"
         android:inputType="textPassword"
         android:layout_marginBottom="16dp"/>
@@ -42,6 +49,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:background="#008080"
         android:text="Sign Up"
         android:textSize="22sp"
         android:layout_marginBottom="16dp"/>
