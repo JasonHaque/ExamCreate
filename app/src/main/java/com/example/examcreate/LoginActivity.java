@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(LoginActivity.this,"Success", Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();
-                startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
+                startActivity(new Intent(LoginActivity.this,TimelineActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
