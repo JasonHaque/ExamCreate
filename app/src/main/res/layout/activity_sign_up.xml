@@ -26,24 +26,30 @@
         android:layout_height="wrap_content"
         android:textColorHint="#ffffff"
         android:hint="Email Address"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
         android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="14dp"/>
     <EditText
         android:id="@+id/sign_up_password_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="14dp"/>
     <EditText
         android:id="@+id/confirm_password_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
         android:textColorHint="#ffffff"
-        android:hint="Confrim Password"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="28dp"/>
     <Button
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
