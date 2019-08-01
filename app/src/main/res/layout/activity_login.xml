@@ -28,6 +28,8 @@
         android:hint="Email Address"
         android:textColor="#ffffff"
         android:textSize="23sp"
+        android:backgroundTint="#ffffff"
+        android:textCursorDrawable="@null"
         android:inputType="textEmailAddress"
         android:layout_marginBottom="14dp"/>
     <EditText
@@ -37,6 +39,8 @@
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
         android:textSize="23sp"
+        android:backgroundTint="#ffffff"
+        android:textCursorDrawable="@null"
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_marginBottom="28dp"/>
