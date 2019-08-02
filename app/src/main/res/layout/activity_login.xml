@@ -6,8 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="#85adad"
+
+    android:background="#75a3a3"
     tools:context=".LoginActivity">
+    <!--android:background="#85adad"-->
 
     <TextView
         android:layout_marginTop="22dp"
