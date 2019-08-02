@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:background="#d9d9d9"
+    android:padding="20dp"
+
     tools:context=".TimelineActivity">
 
     <ImageButton
@@ -14,4 +15,12 @@
         android:layout_height="wrap_content"
         android:src="@drawable/newdocument"
         android:layout_alignParentLeft="true"/>
+    <!--ImageButton
+        android:id="@+id/exam_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/addb"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_alignParentRight="true"/-->
 </RelativeLayout>
