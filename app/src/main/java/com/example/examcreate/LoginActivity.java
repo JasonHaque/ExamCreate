@@ -87,6 +87,8 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void checkUserStatus(){
         if(firebaseAuth.getCurrentUser() != null){
+            String[] ID=firebaseAuth.getCurrentUser().getEmail().toString().split("@");
+            userID=ID[0];
             startActivity(new Intent(LoginActivity.this,TimelineActivity.class));
         }
     }
