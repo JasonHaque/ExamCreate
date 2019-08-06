@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email=emailText.getText().toString();
                 String password = passwordText.getText().toString();
-                if(email.isEmpty() || password.isEmpty()){
+                if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
                     Toast.makeText(LoginActivity.this,"Fill up Email And Password Properly", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -83,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void checkUserStatus(){
         if(firebaseAuth.getCurrentUser() != null){
-            startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
+            startActivity(new Intent(LoginActivity.this,TimelineActivity.class));
         }
     }
 }
