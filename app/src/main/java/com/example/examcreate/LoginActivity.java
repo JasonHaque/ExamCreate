@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton,signupButton;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    public static String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(LoginActivity.this,"Success", Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();
+                String[] ID=firebaseAuth.getCurrentUser().getEmail().toString().split("@");
+                userID=ID[0];
                 startActivity(new Intent(LoginActivity.this,TimelineActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {

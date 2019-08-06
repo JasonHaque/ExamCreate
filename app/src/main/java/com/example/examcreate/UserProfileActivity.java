@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import static com.example.examcreate.LoginActivity.userID;
+
 public class UserProfileActivity extends AppCompatActivity {
 
     private TextView profiletext;
@@ -23,8 +25,7 @@ public class UserProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
         bindWidgets();
         bindListeners();
-        String user =firebaseAuth.getCurrentUser().getEmail().toString();
-        profiletext.setText("Welcome User : "+user);
+        profiletext.setText("Welcome User : "+userID);
     }
     private void bindWidgets(){
         profiletext=findViewById(R.id.profile_view);
