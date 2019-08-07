@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 public class TimelineActivity extends AppCompatActivity {
 
     private ImageButton addExam;
-    private Button profile;
+    private Button profile,examList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,7 @@ public class TimelineActivity extends AppCompatActivity {
     private void bindWidgets(){
         addExam=findViewById(R.id.add_exam_button);
         profile=findViewById(R.id.profile_button);
+        examList=findViewById(R.id.exam_list);
     }
 
     private void bindListeners(){
@@ -36,6 +37,12 @@ public class TimelineActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TimelineActivity.this,UserProfileActivity.class));
+            }
+        });
+        examList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TimelineActivity.this,ExamList.class));
             }
         });
     }
