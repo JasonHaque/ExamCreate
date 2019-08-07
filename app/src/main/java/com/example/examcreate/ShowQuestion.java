@@ -2,7 +2,10 @@ package com.example.examcreate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -18,6 +21,7 @@ import static com.example.examcreate.LoginActivity.userID;
 public class ShowQuestion extends AppCompatActivity {
 
     private TextView textView;
+    private Button confirmQuestion;
     private FirebaseFirestore db=FirebaseFirestore.getInstance();
     private CollectionReference dref = db.collection("EXAMS");
     private CollectionReference examref = dref.document(""+userID).collection(""+examName);
@@ -26,11 +30,13 @@ public class ShowQuestion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_question);
         bindWidgets();
+        bindListeners();
         showQuestion();
     }
 
     private void bindWidgets(){
         textView=findViewById(R.id.text_view_data);
+        confirmQuestion=findViewById(R.id.confirm_question);
     }
     private void showQuestion(){
         examref.orderBy("questionnumber", Query.Direction.ASCENDING)
@@ -64,5 +70,14 @@ public class ShowQuestion extends AppCompatActivity {
                         System.out.println(count);
                     }
                 });
+    }
+
+    private void bindListeners(){
+        confirmQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ShowQuestion.this,TimelineActivity.class));
+            }
+        });
     }
 }
