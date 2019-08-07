@@ -57,11 +57,11 @@ public class ShowQuestion extends AppCompatActivity {
                             String optionD = question.getOptiond();
                             count++;
 
-                            data += question_number +" "+question_text +"\n"+
-                                    "A" + " "+optionA+"\n"+
-                                    "B" + " "+optionB+"\n"+
-                                    "C" + " "+optionC+"\n"+
-                                    "D" + " "+optionD+"\n\n\n";
+                            data += question_number +". "+question_text +"\n"+
+                                    "A." + " "+optionA+"\n"+
+                                    "B." + " "+optionB+"\n"+
+                                    "C." + " "+optionC+"\n"+
+                                    "D." + " "+optionD+"\n\n\n";
 
                             System.out.println(data);
 
