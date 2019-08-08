@@ -15,7 +15,8 @@
 
     <TextView
         android:id="@+id/set_exam_name"
-        android:textColor="#000000"
+        android:textColor="#003333"
+        android:textStyle="bold"
         android:textSize="22sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -29,14 +30,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:textColor="#000000"
+            android:textColor="#003333"
             android:text="1"
             android:textStyle="bold"
             android:layout_marginRight="14dp"/>
         <EditText
             android:id="@+id/Question_text"
             android:hint="Enter The Question Here"
-            android:backgroundTint="#000000"
+            android:backgroundTint="#003333"
+            android:textColor="#003333"
             android:textSize="23sp"
             android:textCursorDrawable="@null"
             android:layout_width="match_parent"
@@ -52,14 +54,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:textColor="#000000"
+                android:textColor="#003333"
                 android:text="A. "
                 android:textStyle="bold"/>
             <EditText
                 android:id="@+id/OptionA"
                 android:hint="Option A"
+                android:textColor="#003333"
                 android:textSize="23sp"
-                android:backgroundTint="#000000"
+                android:backgroundTint="#003333"
                 android:textCursorDrawable="@null"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -74,14 +77,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:textColor="#000000"
+                android:textColor="#003333"
                 android:text="B. "
                 android:textStyle="bold"/>
             <EditText
                 android:id="@+id/OptionB"
                 android:hint="Option B"
+                android:textColor="#003333"
                 android:textSize="23sp"
-                android:backgroundTint="#000000"
+                android:backgroundTint="#003333"
                 android:textCursorDrawable="@null"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -96,14 +100,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:textColor="#000000"
+                android:textColor="#003333"
                 android:text="C. "
                 android:textStyle="bold"/>
             <EditText
                 android:id="@+id/OptionC"
                 android:hint="Option C"
                 android:textSize="23sp"
-                android:backgroundTint="#000000"
+                android:textColor="#003333"
+                android:backgroundTint="#003333"
                 android:textCursorDrawable="@null"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -118,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:textColor="#000000"
+                android:textColor="#003333"
                 android:text="D. "
                 android:textStyle="bold"/>
 
@@ -126,9 +131,10 @@
                 android:id="@+id/OptionD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#003333"
                 android:hint="Option D"
                 android:textSize="23sp"
-                android:backgroundTint="#000000"
+                android:backgroundTint="#003333"
                 android:textCursorDrawable="@null" />
 
         </LinearLayout>
@@ -137,7 +143,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColor="#000000"
+            android:textColor="#003333"
             android:text="Enter The Correct Option Number"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -147,7 +153,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:backgroundTint="#000000"
+            android:textColor="#003333"
+            android:backgroundTint="#003333"
             android:textSize="23sp"
             android:textCursorDrawable="@null"
             android:hint="A/B/C/D" />
@@ -173,7 +180,7 @@
                 android:id="@+id/add_question_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
+                android:textColor="#003333"
                 android:textStyle="bold"
                 android:text="Add this question to question set"
                 android:textSize="18sp"
