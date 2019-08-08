@@ -26,7 +26,7 @@ public class ExamCreateActivity extends AppCompatActivity {
     private void bindWidgets(){
         examCreate=findViewById(R.id.create_exam);
         examSet=findViewById(R.id.exam_name);
-        backTotimeline=findViewById(R.id.crexamback_button);
+        backTotimeline=findViewById(R.id.exam_back);
     }
     private void bindListeners(){
         examCreate.setOnClickListener(new View.OnClickListener() {

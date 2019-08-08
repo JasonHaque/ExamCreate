@@ -27,7 +27,7 @@
         android:background="#008080"
         android:text="Create Exam"/>
     <Button
-        android:id="@+id/crexamback_button"
+        android:id="@+id/exam_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="440dp"
