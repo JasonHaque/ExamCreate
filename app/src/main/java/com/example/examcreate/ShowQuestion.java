@@ -20,7 +20,7 @@ import static com.example.examcreate.LoginActivity.userID;
 
 public class ShowQuestion extends AppCompatActivity {
 
-    private TextView textView;
+    private TextView textView,examView;
     private Button confirmQuestion, backToQcreate;
     private FirebaseFirestore db=FirebaseFirestore.getInstance();
     private CollectionReference dref = db.collection("EXAMS");
@@ -32,12 +32,14 @@ public class ShowQuestion extends AppCompatActivity {
         bindWidgets();
         bindListeners();
         showQuestion();
+
     }
 
     private void bindWidgets(){
         textView=findViewById(R.id.text_view_data);
         confirmQuestion=findViewById(R.id.confirm_question);
         backToQcreate=findViewById(R.id.createQback_button);
+        examView=findViewById(R.id.text_view_name);
     }
     private void showQuestion(){
         examref.orderBy("questionnumber", Query.Direction.ASCENDING)
@@ -86,5 +88,6 @@ public class ShowQuestion extends AppCompatActivity {
                 startActivity(new Intent(ShowQuestion.this,QuestionCreate.class));
             }
         });
+        textView.setText(""+examName);
     }
 }
