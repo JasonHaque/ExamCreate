@@ -13,7 +13,10 @@
         android:id="@+id/profile_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"/>
+        android:textSize="22sp"
+        android:textColor="#fafafa"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"/>
     <Button
         android:id="@+id/log_out_button"
         android:layout_width="wrap_content"
@@ -27,7 +30,7 @@
         android:id="@+id/profback_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="450dp"
         android:layout_marginLeft="260dp"
         android:textSize="22sp"
         android:textColor="#ffffff"
