@@ -21,7 +21,7 @@ import static com.example.examcreate.LoginActivity.userID;
 public class ShowQuestion extends AppCompatActivity {
 
     private TextView textView;
-    private Button confirmQuestion;
+    private Button confirmQuestion, backToQcreate;
     private FirebaseFirestore db=FirebaseFirestore.getInstance();
     private CollectionReference dref = db.collection("EXAMS");
     private CollectionReference examref = dref.document(""+userID).collection(""+examName);
@@ -37,6 +37,7 @@ public class ShowQuestion extends AppCompatActivity {
     private void bindWidgets(){
         textView=findViewById(R.id.text_view_data);
         confirmQuestion=findViewById(R.id.confirm_question);
+        backToQcreate=findViewById(R.id.createQback_button);
     }
     private void showQuestion(){
         examref.orderBy("questionnumber", Query.Direction.ASCENDING)
@@ -77,6 +78,12 @@ public class ShowQuestion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ShowQuestion.this,TimelineActivity.class));
+            }
+        });
+        backToQcreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ShowQuestion.this,QuestionCreate.class));
             }
         });
     }
