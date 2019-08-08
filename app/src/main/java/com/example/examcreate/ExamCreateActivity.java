@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class ExamCreateActivity extends AppCompatActivity {
 
-    private Button examCreate;
+    private Button examCreate, backTotimeline;
     public static String examName;
     public EditText examSet;
     @Override
@@ -26,7 +26,7 @@ public class ExamCreateActivity extends AppCompatActivity {
     private void bindWidgets(){
         examCreate=findViewById(R.id.create_exam);
         examSet=findViewById(R.id.exam_name);
-
+        backTotimeline=findViewById(R.id.crexamback_button);
     }
     private void bindListeners(){
         examCreate.setOnClickListener(new View.OnClickListener() {
@@ -34,13 +34,20 @@ public class ExamCreateActivity extends AppCompatActivity {
             public void onClick(View view) {
                 examName=examSet.getText().toString();
                 if(TextUtils.isEmpty(examName)){
-                    Toast.makeText(ExamCreateActivity.this,"Fill up subject of exam properly", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ExamCreateActivity.this,"Fill up the subject of exam properly", Toast.LENGTH_LONG).show();
                     return;
                 }
-                else {
+                else if(!TextUtils.isEmpty(examName)){
                     startActivity(new Intent(ExamCreateActivity.this, QuestionCreate.class));
                 }
             }
         });
+        backTotimeline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ExamCreateActivity.this, TimelineActivity.class));
+            }
+        });
     }
+
 }
