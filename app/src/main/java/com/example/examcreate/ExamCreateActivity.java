@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ExamCreateActivity extends AppCompatActivity {
 
@@ -31,7 +33,13 @@ public class ExamCreateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 examName=examSet.getText().toString();
-                startActivity(new Intent(ExamCreateActivity.this,QuestionCreate.class));
+                if(TextUtils.isEmpty(examName)){
+                    Toast.makeText(ExamCreateActivity.this,"Fill up subject of exam properly", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else {
+                    startActivity(new Intent(ExamCreateActivity.this, QuestionCreate.class));
+                }
             }
         });
     }
