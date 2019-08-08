@@ -74,7 +74,7 @@
         android:text="BACK TO LOGIN"
         android:padding="12dp"
         android:textColor="#ffffff"
-        android:background="#008080"
+        android:background="#001a1a"
         android:textSize="22sp"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"/>
