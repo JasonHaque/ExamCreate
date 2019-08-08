@@ -186,7 +186,7 @@
             android:layout_height="wrap_content"
             android:text="Create Exam"
             android:layout_gravity="center"
-            android:background="@color/colorPrimary"
+            android:background="#008080"
             android:textColor="#ffffff"
             android:textSize="22sp"/>
 
