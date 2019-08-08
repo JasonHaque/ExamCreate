@@ -27,7 +27,7 @@ public class QuestionCreate extends AppCompatActivity {
     private CollectionReference dref = database.collection("EXAMS");
     private CollectionReference examref = dref.document(""+userID).collection(""+examName);
     private ProgressDialog prog;
-    private Button CreateExam ,questionCreate;
+    private Button CreateExam ,questionCreate, backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +48,8 @@ public class QuestionCreate extends AppCompatActivity {
         optionD = findViewById(R.id.OptionD);
         ChoiceOption = findViewById(R.id.OptionChoice);
         CreateExam = findViewById(R.id.create_exam_button);
+        backButton = findViewById(R.id.backexamcr_button);
         prog=new ProgressDialog(this);
-
-
     }
 
     private void bindListeners(){
@@ -91,6 +90,12 @@ public class QuestionCreate extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(QuestionCreate.this,ShowQuestion.class));
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(QuestionCreate.this,ExamCreateActivity.class));
             }
         });
     }

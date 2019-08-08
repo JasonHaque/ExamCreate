@@ -136,7 +136,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:textColor="#000000"
             android:text="Enter The Correct Option Number"
             android:textSize="22sp"
@@ -146,7 +146,7 @@
             android:id="@+id/OptionChoice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#000000"
             android:textSize="23sp"
             android:textCursorDrawable="@null"
@@ -154,7 +154,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginTop="20dp">
             <Button
                 android:id="@+id/question_button"
@@ -177,7 +177,6 @@
                 android:text="Add Question"
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"/>
-
         </LinearLayout>
 
         <Button
@@ -189,6 +188,17 @@
             android:background="#008080"
             android:textColor="#ffffff"
             android:textSize="22sp"/>
+        <Button
+            android:id="@+id/backexamcr_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:textColor="#ffffff"
+            android:background="#008080"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+
 
     </LinearLayout>
 
