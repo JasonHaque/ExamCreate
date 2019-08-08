@@ -17,7 +17,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private TextView profiletext;
     private FirebaseAuth firebaseAuth;
-    private Button logOut;
+    private Button logOut, timBack;
     private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private void bindWidgets(){
         profiletext=findViewById(R.id.profile_view);
         logOut=findViewById(R.id.log_out_button);
+        timBack=findViewById(R.id.profback_button);
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
     }
@@ -39,6 +40,12 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 firebaseAuth.signOut();
                 startActivity(new Intent(UserProfileActivity.this,LoginActivity.class));
+            }
+        });
+        timBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserProfileActivity.this,TimelineActivity.class));
             }
         });
     }

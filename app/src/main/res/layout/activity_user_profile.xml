@@ -23,4 +23,15 @@
         android:background="#008080"
         android:textSize="22sp"
         android:text="Log Out"/>
+    <Button
+        android:id="@+id/profback_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="260dp"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:background="#008080"
+        android:text="Back"/>
 </LinearLayout>
