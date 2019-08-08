@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText email,password,confirmPassword;
-    private Button signUpButton;
+    private Button signUpButton, backToLoginButton;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     @Override
@@ -38,6 +38,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton=findViewById(R.id.sign_in_button);
         confirmPassword=findViewById(R.id.confirm_password_text);
         firebaseAuth=FirebaseAuth.getInstance();
+        backToLoginButton=findViewById(R.id.backlogin_button);
         progressDialog=new ProgressDialog(this);
     }
     private void bindListeners(){
@@ -57,6 +58,12 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
                 signup(emailId,passwordId);
+            }
+        });
+        backToLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
             }
         });
     }
