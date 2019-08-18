@@ -31,6 +31,7 @@ public class ShowQuestion extends AppCompatActivity {
         setContentView(R.layout.activity_show_question);
         bindWidgets();
         bindListeners();
+        examView.setText(""+examName+"\n \n");
         showQuestion();
 
     }
@@ -88,6 +89,6 @@ public class ShowQuestion extends AppCompatActivity {
                 startActivity(new Intent(ShowQuestion.this,QuestionCreate.class));
             }
         });
-        textView.setText(""+examName);
+
     }
 }
