@@ -1,17 +1,24 @@
 package com.example.examcreate;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class TimelineActivity extends AppCompatActivity {
 
     private ImageButton addExam;
-    private Button profile,examList;
+    private Button examList;
+    private BottomNavigationView bottomnavView;
+    private BottomNavigationItemView home,activity_log,Profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +29,9 @@ public class TimelineActivity extends AppCompatActivity {
 
     private void bindWidgets(){
         addExam=findViewById(R.id.add_exam_button);
-        profile=findViewById(R.id.profile_button);
+        Profile=findViewById(R.id.profile);
         examList=findViewById(R.id.exam_list);
+        bottomnavView=findViewById(R.id.nav_view);
     }
 
     private void bindListeners(){
@@ -33,16 +41,19 @@ public class TimelineActivity extends AppCompatActivity {
                 startActivity(new Intent(TimelineActivity.this,ExamCreateActivity.class));
             }
         });
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(TimelineActivity.this,UserProfileActivity.class));
-            }
-        });
+
         examList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TimelineActivity.this,ExamList.class));
+            }
+        });
+        bottomnavView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
+                if(menuItem.getItemId() == R.id.profile){
+                    startActivity(new Intent(TimelineActivity.this,UserProfileActivity.class));
+                }
             }
         });
     }

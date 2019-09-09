@@ -14,13 +14,7 @@
         android:src="@drawable/newdocument"
         android:padding="10dp"
         android:layout_alignParentLeft="true"/>
-    <Button
-        android:id="@+id/profile_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="profile"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"/>
+
     <Button
         android:id="@+id/exam_list"
         android:layout_width="wrap_content"
