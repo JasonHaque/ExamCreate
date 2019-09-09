@@ -30,8 +30,8 @@ public class TimelineActivity extends AppCompatActivity {
     private void bindWidgets(){
         addExam=findViewById(R.id.add_exam_button);
         Profile=findViewById(R.id.profile);
-        examList=findViewById(R.id.exam_list);
         bottomnavView=findViewById(R.id.nav_view);
+        activity_log=findViewById(R.id.exam_log);
     }
 
     private void bindListeners(){
@@ -42,17 +42,15 @@ public class TimelineActivity extends AppCompatActivity {
             }
         });
 
-        examList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(TimelineActivity.this,ExamList.class));
-            }
-        });
+
         bottomnavView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
             @Override
             public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
                 if(menuItem.getItemId() == R.id.profile){
                     startActivity(new Intent(TimelineActivity.this,UserProfileActivity.class));
+                }
+                else if(menuItem.getItemId() == R.id.exam_log){
+                    startActivity(new Intent(TimelineActivity.this,ExamList.class));
                 }
             }
         });
