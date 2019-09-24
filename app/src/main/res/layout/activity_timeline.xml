@@ -25,7 +25,7 @@
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/cardview_dark_background"
+        app:itemBackground="@color/navBarColor"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
         app:menu="@menu/bottom_nav_menu" />
