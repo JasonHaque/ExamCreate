@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="#75a3a3"
     tools:context=".TimelineActivity">
 
     <ImageButton
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/newdocument"
         android:padding="10dp"
-        android:background="#fff"
+        android:background="#75a3a3"
         android:layout_alignParentLeft="true"/>
 
 
@@ -25,7 +25,7 @@
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@color/cardview_dark_background"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
         app:menu="@menu/bottom_nav_menu" />
