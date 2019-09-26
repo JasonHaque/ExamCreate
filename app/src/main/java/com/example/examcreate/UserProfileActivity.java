@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,6 +17,7 @@ import static com.example.examcreate.LoginActivity.userID;
 public class UserProfileActivity extends AppCompatActivity {
 
     private TextView profiletext;
+    private ImageView profileImage;
     private FirebaseAuth firebaseAuth;
     private Button logOut, timBack;
     private ProgressDialog progressDialog;
@@ -26,11 +28,13 @@ public class UserProfileActivity extends AppCompatActivity {
         bindWidgets();
         bindListeners();
         profiletext.setText("Welcome User : "+userID);
+        profileImage.setImageResource(R.drawable.profile);
     }
     private void bindWidgets(){
         profiletext=findViewById(R.id.profile_view);
         logOut=findViewById(R.id.log_out_button);
         timBack=findViewById(R.id.profback_button);
+        profileImage=findViewById(R.id.profile_image);
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
     }
