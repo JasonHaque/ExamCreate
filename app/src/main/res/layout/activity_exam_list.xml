@@ -15,7 +15,14 @@
         android:id="@+id/exam_list_view"
         android:textSize="22sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <Button
+        android:id="@+id/back_to_timeline"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:text="Back"/>
 
 </LinearLayout>
 </ScrollView>
