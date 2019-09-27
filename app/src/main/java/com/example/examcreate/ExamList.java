@@ -29,6 +29,7 @@ public class ExamList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_list);
         bindWidgets();
+        examListView.setText("Your Exams are Given Below");
 
     }
 
