@@ -34,26 +34,18 @@ public class ExamCreateActivity extends AppCompatActivity {
         writtenO=findViewById(R.id.writtenid);
     }
     private void bindListeners(){
-        examCreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                examName=examSet.getText().toString();
-                examDate=dateOfExam.getText().toString();
-                if((TextUtils.isEmpty(examName) || TextUtils.isEmpty(examDate) || !mcqO.isChecked()) && (TextUtils.isEmpty(examName) || TextUtils.isEmpty(examDate) || !writtenO.isChecked())){
-                    Toast.makeText(ExamCreateActivity.this,"Fill up the fields properly", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                else if(!TextUtils.isEmpty(examName) && !TextUtils.isEmpty(examDate) && mcqO.isChecked()){
-                    startActivity(new Intent(ExamCreateActivity.this, QuestionCreate.class));
-                }
+        examCreate.setOnClickListener(view -> {
+            examName=examSet.getText().toString();
+            examDate=dateOfExam.getText().toString();
+            if((TextUtils.isEmpty(examName) || TextUtils.isEmpty(examDate) || !mcqO.isChecked()) && (TextUtils.isEmpty(examName) || TextUtils.isEmpty(examDate) || !writtenO.isChecked())){
+                Toast.makeText(ExamCreateActivity.this,"Fill up the fields properly", Toast.LENGTH_LONG).show();
+                return;
+            }
+            else if(!TextUtils.isEmpty(examName) && !TextUtils.isEmpty(examDate) && mcqO.isChecked()){
+                startActivity(new Intent(ExamCreateActivity.this, QuestionCreate.class));
             }
         });
-        backTotimeline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ExamCreateActivity.this, TimelineActivity.class));
-            }
-        });
+        backTotimeline.setOnClickListener(view -> startActivity(new Intent(ExamCreateActivity.this, TimelineActivity.class)));
     }
 
 }

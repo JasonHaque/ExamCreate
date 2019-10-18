@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -24,6 +26,7 @@ public class QuestionCreate extends AppCompatActivity {
     private TextView finalexamName,QuestionNumber;
     private EditText questiontext,optionA,optionB,optionC,optionD,ChoiceOption;
     private FirebaseFirestore database = FirebaseFirestore.getInstance();
+    private DatabaseReference db = FirebaseDatabase.getInstance().getReference();
     private CollectionReference dref = database.collection("EXAMS");
     private CollectionReference examref = dref.document(""+userID).collection(""+examName);
     private ProgressDialog prog;
@@ -50,6 +53,7 @@ public class QuestionCreate extends AppCompatActivity {
         CreateExam = findViewById(R.id.create_exam_button);
         backButton = findViewById(R.id.backexamcr_button);
         prog=new ProgressDialog(this);
+
     }
 
     private void bindListeners(){
@@ -92,11 +96,6 @@ public class QuestionCreate extends AppCompatActivity {
                 startActivity(new Intent(QuestionCreate.this,ShowQuestion.class));
             }
         });
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(QuestionCreate.this,ExamCreateActivity.class));
-            }
-        });
+        backButton.setOnClickListener(view -> startActivity(new Intent(QuestionCreate.this,ExamCreateActivity.class)));
     }
 }
