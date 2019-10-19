@@ -43,46 +43,32 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void bindButtonListeners(){
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email=emailText.getText().toString();
-                String password = passwordText.getText().toString();
-                if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
-                    Toast.makeText(LoginActivity.this,"Fill up Email And Password Properly", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                login(email,password);
+        loginButton.setOnClickListener(view -> {
+            String email=emailText.getText().toString();
+            String password = passwordText.getText().toString();
+            if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+                Toast.makeText(LoginActivity.this,"Fill up Email And Password Properly", Toast.LENGTH_LONG).show();
+                return;
+            }
+            login(email,password);
 
-            }
         });
-        signupButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
-            }
-        });
+        signupButton.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this,SignUpActivity.class)));
     }
 
     private void login(String email,String password){
         progressDialog.setTitle("Logging you in");
         progressDialog.show();
-        firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Toast.makeText(LoginActivity.this,"Success", Toast.LENGTH_LONG).show();
-                progressDialog.dismiss();
-                String[] ID=firebaseAuth.getCurrentUser().getEmail().toString().split("@");
-                userID=ID[0];
-                startActivity(new Intent(LoginActivity.this,TimelineActivity.class));
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
-                progressDialog.dismiss();
-                return;
-            }
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(authResult -> {
+            Toast.makeText(LoginActivity.this,"Success", Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            String[] ID=firebaseAuth.getCurrentUser().getEmail().toString().split("@");
+            userID=ID[0];
+            startActivity(new Intent(LoginActivity.this,TimelineActivity.class));
+        }).addOnFailureListener(e -> {
+            Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            return;
         });
     }
     private void checkUserStatus(){

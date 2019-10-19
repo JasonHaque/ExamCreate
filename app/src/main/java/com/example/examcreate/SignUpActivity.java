@@ -42,30 +42,22 @@ public class SignUpActivity extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
     }
     private void bindListeners(){
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String emailId=email.getText().toString();
-                String passwordId=password.getText().toString();
-                String confirm=confirmPassword.getText().toString();
+        signUpButton.setOnClickListener(view -> {
+            String emailId=email.getText().toString();
+            String passwordId=password.getText().toString();
+            String confirm=confirmPassword.getText().toString();
 
-                if(TextUtils.isEmpty(emailId) || TextUtils.isEmpty(passwordId) || TextUtils.isEmpty(confirm)){
-                    Toast.makeText(SignUpActivity.this,"Fill up the fields Properly", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if(!passwordId.equals(confirm)){
-                    Toast.makeText(SignUpActivity.this,"Passwords do not match", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                signup(emailId,passwordId);
+            if(TextUtils.isEmpty(emailId) || TextUtils.isEmpty(passwordId) || TextUtils.isEmpty(confirm)){
+                Toast.makeText(SignUpActivity.this,"Fill up the fields Properly", Toast.LENGTH_LONG).show();
+                return;
             }
-        });
-        backToLoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+            if(!passwordId.equals(confirm)){
+                Toast.makeText(SignUpActivity.this,"Passwords do not match", Toast.LENGTH_LONG).show();
+                return;
             }
+            signup(emailId,passwordId);
         });
+        backToLoginButton.setOnClickListener(view -> startActivity(new Intent(SignUpActivity.this,LoginActivity.class)));
     }
 
     private void signup(String email,String password){
@@ -78,11 +70,9 @@ public class SignUpActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignUpActivity.this,"Failed", Toast.LENGTH_LONG).show();
-            }
+        }).addOnFailureListener(e -> {
+            progressDialog.dismiss();
+            Toast.makeText(SignUpActivity.this,"Failed", Toast.LENGTH_LONG).show();
         });
     }
 }
