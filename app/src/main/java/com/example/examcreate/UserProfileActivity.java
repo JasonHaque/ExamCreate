@@ -40,18 +40,10 @@ public class UserProfileActivity extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
     }
     private void bindListeners(){
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                firebaseAuth.signOut();
-                startActivity(new Intent(UserProfileActivity.this,LoginActivity.class));
-            }
+        logOut.setOnClickListener(view -> {
+            firebaseAuth.signOut();
+            startActivity(new Intent(UserProfileActivity.this,LoginActivity.class));
         });
-        timBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(UserProfileActivity.this,TimelineActivity.class));
-            }
-        });
+        timBack.setOnClickListener(view -> startActivity(new Intent(UserProfileActivity.this,TimelineActivity.class)));
     }
 }
